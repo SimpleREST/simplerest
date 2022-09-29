@@ -1,4 +1,6 @@
 <?php
+
+define('SIMPLEREST_START', microtime(true));
 /**
  * --------------------------------------------------------------------------------------------
  * RU/EN: Основная точка входа/ Main entry point
@@ -20,6 +22,6 @@
  * Временная заглушка кода / This is a temporary code stub
  * По завершении редактирования файла УБРАТЬ!
  */
-
-echo "Привет! К работе готов!";
+define('SIMPLEREST_STOP', microtime(true));
+exit("Привет! Программа завершила работу (затрачено времени:" . (SIMPLEREST_STOP - SIMPLEREST_START) . "ms");
 
