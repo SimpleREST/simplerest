@@ -1,32 +1,48 @@
 {
-    "name": "simplerest/simplerest",
-    "description": "The Simple REST API Framework",
-    "type": "project",
-    "license": "MIT",
-    "homepage": "http://simplerest.ru",
-    "support": {
-        "issues": "https://github.com/simplerest/framework/issues",
-        "source": "https://github.com/simplerest/framework"
-    },
-    "authors": [
-        {
-            "name": "Dmitriy Veremeenko",
-            "email": "stdimensiy@yandex.ru"
-        }
+  "name": "simplerest/simplerest",
+  "description": "The Simple REST API Framework",
+  "keywords": [
+    "REST",
+    "framework"
+  ],
+  "type": "project",
+  "license": "MIT",
+  "homepage": "https://simplerest.ru",
+  "support": {
+    "issues": "https://github.com/simplerest/simplerest/issues",
+    "source": "https://github.com/simplerest/simplerest"
+  },
+  "authors": [
+    {
+      "name": "Dmitriy Veremeenko",
+      "email": "stdimensiy@yandex.ru"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/simplerest/simplerest"
+    }
+  ],
+  "require": {
+    "php": ">=8.0",
+    "simplerest/framework": "1.0.1"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true,
+    "platform": {
+      "php": "8.1.6"
+    }
+  },
+  "scripts": {
+    "post-update-cmd": [
+      "composer install --no-autoloader --working-dir public/"
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/simplerest/framework"
-        }
-    ],
-    "require": {
-        "php": "8.1.*",
-        "simplerest/framework": "1.0.1"
-    },
-    "config": {
-        "sort-packages": true
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "post-create-project-cmd": [
+      "composer install --no-autoloader --working-dir public/"
+    ]
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
