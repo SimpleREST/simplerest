@@ -1,6 +1,6 @@
 {
   "name": "simplerest/simplerest",
-  "description": "The Simple REST API Framework",
+  "description": "The skeleton application for the Simple REST Framework",
   "keywords": [
     "REST",
     "framework"
@@ -20,13 +20,21 @@
   ],
   "repositories": [
     {
-      "type": "vcs",
-      "url": "https://github.com/simplerest/simplerest"
+      "type": "package",
+      "package": {
+        "name": "simplerest/framework",
+        "version": "dev-develop",
+        "source": {
+          "url": "https://github.com/simplerest/framework",
+          "type": "git",
+          "reference": "origin/develop"
+        }
+      }
     }
   ],
   "require": {
-    "php": ">=8.0",
-    "simplerest/framework": "1.0.1"
+    "php": ">=8.1",
+    "simplerest/framework": "dev-develop"
   },
   "config": {
     "optimize-autoloader": true,
@@ -37,10 +45,10 @@
   },
   "scripts": {
     "post-update-cmd": [
-      "composer install --no-autoloader --working-dir public/"
+      "composer install --no-autoloader --working-dir production/public/"
     ],
     "post-create-project-cmd": [
-      "composer install --no-autoloader --working-dir public/"
+      "composer install --no-autoloader --working-dir production/public/"
     ]
   },
   "minimum-stability": "dev",
